@@ -1,384 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>myFX Trading Academy — The Silent Language of the Market</title>
-  <meta name="description" content="myFX Trading Academy by Andrew Tembo. Not signals. Not shortcuts. Real framework. Real trades. Real results." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1628'/><text y='24' font-size='20' fill='%23C9A84C'>₣</text></svg>" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My FX Trading Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #0b0f1a; color: #fff; }
+
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 10%; background:#0b0f1a; position:sticky; top:0;
+    }
+
+    header h1 { color:#00c3ff; }
+    nav a { margin:0 15px; color:#fff; text-decoration:none; }
+
+    .hero {
+      height:90vh;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center;
+      background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+      url('https://images.unsplash.com/photo-1642790551116-18e1504d6bb3');
+      background-size:cover;
+    }
+
+    .hero h2 { font-size:48px; margin-bottom:20px; }
+    .hero p { font-size:20px; margin-bottom:30px; max-width:600px; }
+
+    .btn {
+      padding:14px 28px; margin:10px;
+      border:none; border-radius:6px;
+      background:#00c3ff; color:#000;
+      font-weight:600; cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover { transform:scale(1.05); }
+
+    .section { padding:80px 10%; text-align:center; }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px; margin-top:40px;
+    }
+
+    .card {
+      background:#111827; padding:30px;
+      border-radius:15px;
+      box-shadow:0 0 15px rgba(0,195,255,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover { transform:translateY(-10px); }
+
+    .highlight {
+      background:#020617;
+      padding:60px 10%;
+    }
+
+    .testimonial {
+      max-width:600px;
+      margin:20px auto;
+      font-style:italic;
+      opacity:0.9;
+    }
+
+    footer {
+      text-align:center;
+      padding:30px;
+      background:#020617;
+    }
+
+    .whatsapp {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      padding:15px;
+      border-radius:50%;
+      text-decoration:none;
+      font-weight:bold;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ====== NAV ====== -->
-<nav class="nav" aria-label="Main navigation">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="myFX Trading Academy Home">
-        <span class="nav-logo-main">myFX</span>
-        <span class="nav-logo-sub">Trading Academy</span>
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="courses.html" class="btn btn-primary nav-cta">Enrol Now</a>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
+<header>
+  <h1>My FX Trading Academy</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-<!-- ====== HERO ====== -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
+  <h2>Master Forex Trading Like a Pro</h2>
+  <p>Simple. Powerful. Proven strategies using Price Action & RSI designed for consistency.</p>
 
-  <!-- Decorative candlestick SVG -->
-  <svg class="hero-chart" viewBox="0 0 800 600" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
-    <!-- Wicks and bodies of stylized candles -->
-    <g stroke="#C9A84C" stroke-width="1.5" fill="none">
-      <!-- Candle 1 bull -->
-      <line x1="80" y1="450" x2="80" y2="200"/>
-      <rect x="72" y="310" width="16" height="100" fill="#C9A84C" stroke="none"/>
-      <!-- Candle 2 bear -->
-      <line x1="140" y1="420" x2="140" y2="180"/>
-      <rect x="132" y="240" width="16" height="120" fill="none" stroke="#C9A84C"/>
-      <!-- Candle 3 bull -->
-      <line x1="200" y1="400" x2="200" y2="150"/>
-      <rect x="192" y="220" width="16" height="130" fill="#C9A84C" stroke="none"/>
-      <!-- Candle 4 bull -->
-      <line x1="260" y1="380" x2="260" y2="120"/>
-      <rect x="252" y="180" width="16" height="150" fill="#C9A84C" stroke="none"/>
-      <!-- Candle 5 bear -->
-      <line x1="320" y1="360" x2="320" y2="100"/>
-      <rect x="312" y="160" width="16" height="130" fill="none" stroke="#C9A84C"/>
-      <!-- Candle 6 bull -->
-      <line x1="380" y1="340" x2="380" y2="80"/>
-      <rect x="372" y="140" width="16" height="150" fill="#C9A84C" stroke="none"/>
-      <!-- Candle 7 -->
-      <line x1="440" y1="320" x2="440" y2="60"/>
-      <rect x="432" y="120" width="16" height="140" fill="#C9A84C" stroke="none"/>
-      <!-- Candle 8 bear -->
-      <line x1="500" y1="350" x2="500" y2="90"/>
-      <rect x="492" y="150" width="16" height="120" fill="none" stroke="#C9A84C"/>
-      <!-- Candle 9 bull -->
-      <line x1="560" y1="310" x2="560" y2="70"/>
-      <rect x="552" y="130" width="16" height="130" fill="#C9A84C" stroke="none"/>
-      <!-- Candle 10 -->
-      <line x1="620" y1="290" x2="620" y2="50"/>
-      <rect x="612" y="110" width="16" height="140" fill="#C9A84C" stroke="none"/>
-      <!-- Candle 11 bear -->
-      <line x1="680" y1="330" x2="680" y2="80"/>
-      <rect x="672" y="140" width="16" height="120" fill="none" stroke="#C9A84C"/>
-      <!-- Candle 12 bull -->
-      <line x1="740" y1="300" x2="740" y2="60"/>
-      <rect x="732" y="120" width="16" height="140" fill="#C9A84C" stroke="none"/>
+  <!-- CONNECTED BUTTONS -->
+  <button class="btn" onclick="window.location.href='https://wa.me/260976245030?text=Hi%20I%20want%20to%20join%20My%20FX%20Trading%20Academy'">
+    Join Now
+  </button>
 
-      <!-- Moving average line -->
-      <path d="M 80 380 C 200 300, 350 220, 500 180 S 650 140, 780 100" stroke="rgba(201,168,76,0.6)" stroke-width="1" fill="none" stroke-dasharray="4,4"/>
-    </g>
-    <!-- Grid lines -->
-    <g stroke="rgba(201,168,76,0.08)" stroke-width="1">
-      <line x1="0" y1="150" x2="800" y2="150"/>
-      <line x1="0" y1="250" x2="800" y2="250"/>
-      <line x1="0" y1="350" x2="800" y2="350"/>
-      <line x1="0" y1="450" x2="800" y2="450"/>
-    </g>
-  </svg>
-
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span>Zambia's Premium Forex Education</span>
-      </div>
-
-      <h1>Learn the <em>Silent Language</em><br>of the Market</h1>
-
-      <p class="hero-tagline">"The Silent Language of the Market"</p>
-      <p class="hero-sub">Not signals. Not shortcuts. Real framework. Real trades. Real results. — Founded by Andrew Tembo, Mathematics Lecturer at Mulungushi University.</p>
-
-      <div class="hero-actions">
-        <a href="courses.html" class="btn btn-primary">View Our Courses</a>
-        <a href="about.html" class="btn btn-ghost">Meet Andrew →</a>
-      </div>
-
-      <div class="hero-stat-row">
-        <div class="hero-stat">
-          <div class="hero-stat-value"><span data-target="3" data-suffix=" Tiers">0</span></div>
-          <div class="hero-stat-label">Programme Levels</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value"><span data-target="8" data-suffix=" Weeks">0</span></div>
-          <div class="hero-stat-label">Foundation Duration</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value"><span data-target="10" data-suffix=" Max">0</span></div>
-          <div class="hero-stat-label">Mentorship Spots</div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <button class="btn" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+    View Courses
+  </button>
 </section>
 
-<!-- ====== INTRO STRIP ====== -->
-<section style="background:#040c18; padding: 2rem 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-  <div class="container">
-    <div style="display:flex; align-items:center; justify-content:center; gap:3rem; flex-wrap:wrap;">
-      <span style="font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Disciplined Framework</span>
-      <span style="color:var(--gold); font-size:0.8rem;">✦</span>
-      <span style="font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Price Action Mastery</span>
-      <span style="color:var(--gold); font-size:0.8rem;">✦</span>
-      <span style="font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Risk Management First</span>
-      <span style="color:var(--gold); font-size:0.8rem;">✦</span>
-      <span style="font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Built for Serious Traders</span>
-      <span style="color:var(--gold); font-size:0.8rem;">✦</span>
-      <span style="font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Structured Progression</span>
-    </div>
-  </div>
+<section id="about" class="section">
+  <h2>Who We Are</h2>
+  <p>
+    Founded by Andrew Tembo, My FX Trading Academy helps traders move from confusion to clarity.
+    We focus on real strategies — not hype — built for small accounts and consistent growth.
+  </p>
 </section>
 
-<!-- ====== WHAT IS myFX ====== -->
 <section class="section">
-  <div class="container">
-    <div class="grid-2" style="gap:5rem;">
-      <div class="reveal">
-        <span class="section-label">Our Philosophy</span>
-        <h2>Trading is a <span class="gold italic">language.</span><br>We teach you to read it.</h2>
-        <div class="gold-line"></div>
-        <p>Most trading education sells you signals and shortcuts. At myFX Trading Academy, we do something different. We teach you the <em>underlying grammar</em> of the market — the patterns, structures, and logic that drive price movement.</p>
-        <p>Founded by Andrew Tembo, a Mathematics Lecturer at Mulungushi University in Zambia, myFX is built on the belief that trading mastery comes from understanding, not imitation.</p>
-        <p style="color:var(--gold); font-style:italic; font-family:'Playfair Display',serif;">"When you understand what the market is saying, every candle becomes a sentence."</p>
-        <a href="about.html" class="btn btn-outline mt-3">Andrew's Story →</a>
-      </div>
-      <div class="reveal" style="position:relative;">
-        <!-- Decorative card stack -->
-        <div style="position:relative; height:420px;">
-          <div style="position:absolute; top:30px; right:20px; width:85%; background:rgba(30,58,95,0.3); border:1px solid var(--border); border-radius:4px; height:360px; transform:rotate(2deg);"></div>
-          <div class="card" style="position:absolute; top:0; left:0; width:92%; z-index:2;">
-            <span class="section-label">The myFX Approach</span>
-            <div style="margin-top:0.5rem;">
-              <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.5rem;">
-                <div style="width:36px; height:36px; border-radius:50%; background:rgba(201,168,76,0.12); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:0.8rem; color:var(--gold); font-weight:700;">01</div>
-                <div>
-                  <h4 style="font-family:'Montserrat',sans-serif; margin-bottom:0.3rem;">Framework Over Feelings</h4>
-                  <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">A repeatable, logic-based system for reading the market.</p>
-                </div>
-              </div>
-              <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.5rem;">
-                <div style="width:36px; height:36px; border-radius:50%; background:rgba(201,168,76,0.12); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:0.8rem; color:var(--gold); font-weight:700;">02</div>
-                <div>
-                  <h4 style="font-family:'Montserrat',sans-serif; margin-bottom:0.3rem;">Risk Before Reward</h4>
-                  <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">Capital preservation is the foundation of every strategy.</p>
-                </div>
-              </div>
-              <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.5rem;">
-                <div style="width:36px; height:36px; border-radius:50%; background:rgba(201,168,76,0.12); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:0.8rem; color:var(--gold); font-weight:700;">03</div>
-                <div>
-                  <h4 style="font-family:'Montserrat',sans-serif; margin-bottom:0.3rem;">Progressive Mastery</h4>
-                  <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">From foundation to advanced framework to personal mentorship.</p>
-                </div>
-              </div>
-              <div style="display:flex; align-items:flex-start; gap:1rem;">
-                <div style="width:36px; height:36px; border-radius:50%; background:rgba(201,168,76,0.12); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:0.8rem; color:var(--gold); font-weight:700;">04</div>
-                <div>
-                  <h4 style="font-family:'Montserrat',sans-serif; margin-bottom:0.3rem;">Compounding Mindset</h4>
-                  <p style="font-size:0.82rem; margin:0; color:var(--text-muted);">Patience, consistency, and the long game always win.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <h2>What You Will Learn</h2>
+  <div class="cards">
+    <div class="card">📊 Market Structure Mastery</div>
+    <div class="card">📉 RSI Entry Techniques</div>
+    <div class="card">🎯 Retest Sniper Strategy</div>
+    <div class="card">⚖️ Risk Management System</div>
   </div>
 </section>
 
-<!-- ====== PROGRAMMES OVERVIEW ====== -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-heading center reveal">
-      <span class="section-label">Our Programmes</span>
-      <h2>A Structured Path to <span class="gold">Mastery</span></h2>
-      <div class="gold-line center"></div>
-      <p>Three tiers designed to take you from beginner to fully mentored professional. Each level builds on the last.</p>
+<section id="courses" class="section">
+  <h2>Our Programs</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Beginner Course</h3>
+      <p>Start from zero and understand how forex really works.</p>
+      <br>
+      <button class="btn" onclick="window.location.href='https://wa.me/260976245030?text=I%20want%20the%20Beginner%20Course'">Enroll</button>
     </div>
 
-    <div class="grid-3" data-stagger>
-      <!-- Tier 1 -->
-      <div class="pricing-card reveal" data-delay="0">
-        <div class="pricing-tier">Tier 1</div>
-        <div class="pricing-name">Foundation Programme</div>
-        <div class="pricing-price">
-          <span class="pricing-currency">$</span><span class="pricing-amount">49</span>
-          <div class="pricing-period">One-time payment · USD</div>
-        </div>
-        <p class="pricing-desc">The complete beginner's path. 8 weeks of structured curriculum covering everything you need to start reading the market with confidence.</p>
-        <ul class="pricing-features">
-          <li><span class="check-icon">◆</span> 8-week structured curriculum</li>
-          <li><span class="check-icon">◆</span> Complete beginner friendly</li>
-          <li><span class="check-icon">◆</span> Core price action concepts</li>
-          <li><span class="check-icon">◆</span> Risk management fundamentals</li>
-          <li><span class="check-icon">◆</span> Community access</li>
-        </ul>
-        <a href="courses.html#tier1" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Learn More</a>
-      </div>
-
-      <!-- Tier 2 -->
-      <div class="pricing-card featured reveal" data-delay="120">
-        <div class="pricing-badge">Popular</div>
-        <div class="pricing-tier">Tier 2</div>
-        <div class="pricing-name">The Silent Language</div>
-        <div class="pricing-price">
-          <span class="pricing-currency">$</span><span class="pricing-amount">197</span>
-          <div class="pricing-period">One-time payment · USD</div>
-        </div>
-        <p class="pricing-desc">The advanced framework. For serious traders ready to go beyond the basics and develop a professional edge in the market.</p>
-        <ul class="pricing-features">
-          <li><span class="check-icon">◆</span> Advanced market framework</li>
-          <li><span class="check-icon">◆</span> Serious traders only</li>
-          <li><span class="check-icon">◆</span> Institutional order flow concepts</li>
-          <li><span class="check-icon">◆</span> Advanced entry & exit models</li>
-          <li><span class="check-icon">◆</span> Unlocks Tier 3 eligibility</li>
-        </ul>
-        <a href="courses.html#tier2" class="btn btn-primary" style="width:100%; text-align:center; display:block;">Learn More</a>
-      </div>
-
-      <!-- Tier 3 -->
-      <div class="pricing-card reveal" data-delay="240">
-        <div class="pricing-tier">Tier 3</div>
-        <div class="pricing-name">Personal Mentorship</div>
-        <div class="pricing-price">
-          <span class="pricing-currency">$</span><span class="pricing-amount">97</span>
-          <div class="pricing-period">Per month · USD · Max 10 students</div>
-        </div>
-        <p class="pricing-desc">Direct access to Andrew. Available exclusively to Tier 2 graduates. Limited to 10 students at any time to ensure quality.</p>
-        <ul class="pricing-features">
-          <li><span class="check-icon">◆</span> Tier 2 graduates only</li>
-          <li><span class="check-icon">◆</span> Maximum 10 students</li>
-          <li><span class="check-icon">◆</span> Direct access to Andrew</li>
-          <li><span class="check-icon">◆</span> Live trade reviews</li>
-          <li><span class="check-icon">◆</span> Monthly ongoing access</li>
-        </ul>
-        <a href="courses.html#tier3" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Learn More</a>
-      </div>
+    <div class="card">
+      <h3>Advanced Strategy</h3>
+      <p>Master high-probability entries using price action + RSI.</p>
+      <br>
+      <button class="btn" onclick="window.location.href='https://wa.me/260976245030?text=I%20want%20the%20Advanced%20Strategy'">Enroll</button>
     </div>
+
+    <div class="card">
+      <h3>Mentorship</h3>
+      <p>Get direct guidance, signals, and live market breakdowns.</p>
+      <br>
+      <button class="btn" onclick="window.location.href='https://wa.me/260976245030?text=I%20want%20Mentorship'">Apply</button>
+    </div>
+
   </div>
 </section>
 
-<!-- ====== QUOTE SECTION ====== -->
-<section class="section" style="padding: 5rem 0;">
-  <div class="container">
-    <div style="max-width:800px; margin:0 auto; text-align:center;" class="reveal">
-      <span style="font-size:5rem; color:var(--gold); opacity:0.2; font-family:'Playfair Display',serif; line-height:1; display:block; margin-bottom:-1rem;">"</span>
-      <h2 style="font-size:clamp(1.5rem,3.5vw,2.4rem); font-style:italic; font-weight:400; line-height:1.4; color:var(--white);">
-        The market speaks every second. Most people make noise. A few — <span class="gold">the ones who trained right</span> — sit quietly and listen.
-      </h2>
-      <div class="gold-line center" style="margin-top:2rem;"></div>
-      <p style="margin-top:1rem; font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">— Andrew Tembo, Founder, myFX Trading Academy</p>
-    </div>
+<section class="highlight">
+  <h2>Why Choose Us?</h2>
+  <div class="cards">
+    <div class="card">✔ No hype — real trading only</div>
+    <div class="card">✔ Simple strategies that work</div>
+    <div class="card">✔ Built for small accounts</div>
+    <div class="card">✔ Focus on consistency</div>
   </div>
 </section>
 
-<!-- ====== COMMUNITY CTA ====== -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="telegram-block reveal">
-      <!-- Decorative candles -->
-      <div style="display:flex; justify-content:center; gap:8px; margin-bottom:2rem; align-items:flex-end; height:60px;" aria-hidden="true">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0;color:var(--gold);">
-          <div style="width:1px;height:12px;background:currentColor;"></div>
-          <div style="width:10px;height:28px;background:currentColor;border-radius:1px;"></div>
-          <div style="width:1px;height:8px;background:currentColor;"></div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0;color:rgba(201,168,76,0.4);">
-          <div style="width:1px;height:8px;background:currentColor;"></div>
-          <div style="width:10px;height:20px;background:transparent;border:1px solid currentColor;border-radius:1px;"></div>
-          <div style="width:1px;height:10px;background:currentColor;"></div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0;color:var(--gold);">
-          <div style="width:1px;height:15px;background:currentColor;"></div>
-          <div style="width:10px;height:34px;background:currentColor;border-radius:1px;"></div>
-          <div style="width:1px;height:6px;background:currentColor;"></div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0;color:var(--gold);">
-          <div style="width:1px;height:10px;background:currentColor;"></div>
-          <div style="width:10px;height:24px;background:currentColor;border-radius:1px;"></div>
-          <div style="width:1px;height:8px;background:currentColor;"></div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0;color:rgba(201,168,76,0.4);">
-          <div style="width:1px;height:6px;background:currentColor;"></div>
-          <div style="width:10px;height:18px;background:transparent;border:1px solid currentColor;border-radius:1px;"></div>
-          <div style="width:1px;height:12px;background:currentColor;"></div>
-        </div>
-      </div>
-
-      <span class="section-label" style="display:block; text-align:center; margin-bottom:1rem;">Join the Community</span>
-      <h2 style="text-align:center; max-width:600px; margin:0 auto 1rem;">Connect With the <span class="gold">Investors Community</span></h2>
-      <div class="gold-line center"></div>
-      <p style="text-align:center; max-width:520px; margin:1rem auto 2.5rem; font-size:0.9rem;">Join our Telegram community — Investors Community — where we share market insights, trade setups, and ongoing education. It's where the conversation continues beyond the classroom.</p>
-      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-        <a href="https://t.me/InvestorsCommunity" target="_blank" rel="noopener" class="btn btn-primary">
-          Join on Telegram
-        </a>
-        <a href="community.html" class="btn btn-ghost">Learn More</a>
-      </div>
-    </div>
-  </div>
+<section class="section">
+  <h2>Testimonials</h2>
+  <p class="testimonial">"I finally understand entries and market structure."</p>
+  <p class="testimonial">"The strategy is simple but powerful."</p>
 </section>
 
-<!-- ====== FOOTER ====== -->
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p>Email: andrewcztembo@gmail.com</p>
+
+  <button class="btn" onclick="window.location.href='https://wa.me/260976245030'">
+    Chat on WhatsApp
+  </button>
+</section>
+
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <span class="nav-logo-main" style="font-size:1.5rem;">myFX Trading Academy</span>
-          <span class="nav-logo-sub" style="margin-top:4px;">The Silent Language of the Market</span>
-        </a>
-        <p>Not signals. Not shortcuts. Real framework. Real trades. Real results. — Founded by Andrew Tembo, Mulungushi University, Zambia.</p>
-        <a href="mailto:andrewcztembo@gmail.com" style="font-size:0.82rem; color:var(--gold); display:block; margin-top:0.5rem;">andrewcztembo@gmail.com</a>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Andrew</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Programmes</h4>
-        <ul>
-          <li><a href="courses.html#tier1">Tier 1 — Foundation ($49)</a></li>
-          <li><a href="courses.html#tier2">Tier 2 — Silent Language ($197)</a></li>
-          <li><a href="courses.html#tier3">Tier 3 — Mentorship ($97/mo)</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="https://t.me/InvestorsCommunity" target="_blank" rel="noopener">Telegram Community</a></li>
-          <li><a href="mailto:andrewcztembo@gmail.com">Email Andrew</a></li>
-          <li><a href="contact.html">Contact Form</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 myFX Trading Academy. All rights reserved.</span>
-      <span style="color:var(--text-muted); font-style:italic; font-size:0.72rem;">"The Silent Language of the Market"</span>
-    </div>
-  </div>
+  <p>© 2026 My FX Trading Academy | All Rights Reserved</p>
 </footer>
 
-<script src="js/main.js"></script>
+<a href="https://wa.me/260976245030?text=Hi%20I%20am%20interested%20in%20your%20academy" class="whatsapp">WA</a>
+
 </body>
 </html>
